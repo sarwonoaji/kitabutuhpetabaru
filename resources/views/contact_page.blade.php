@@ -2,6 +2,11 @@
 
 @section('content')
 
+<div style="background-color:#a099ff;" class="text-white py-8 p-4 flex items-center justify-center">
+    <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
+    <h1 class="text-lg font-semibold text-center">Hubungi Kami</h1>
+</div>
+
 <div class="container py-4">
 
     <!-- HEADER -->
@@ -45,7 +50,8 @@
     <!-- BUTTON BACK -->
     <div class="mt-4">
     <a href="{{ url('/') }}"
-       class="inline-block bg-gradient-to-r from-emerald-500 to-green-600 text-white px-4 py-2 rounded-lg text-sm shadow hover:opacity-90 transition">
+       style="background-color:#a099ff;"
+       class="inline-block text-white px-4 py-2 rounded-lg text-sm shadow hover:opacity-90 transition">
         Tutup
     </a>
 </div>

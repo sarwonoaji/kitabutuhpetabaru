@@ -1,4 +1,4 @@
-@extends('layout.apps')
+@extends('layout.landing')
 
 @section('content')
 
@@ -52,22 +52,23 @@
 <section class="section-pad" style="background:var(--bg-gray)">
     <div class="container">
         <div class="grid-2">
+
             @php
             $menus = [
-                ['title'=>'Kependudukan','icon'=>'P','color'=>'bg-blue','route'=>'kependudukan'],
-                ['title'=>'Aset Desa','icon'=>'A','color'=>'bg-purple','route'=>'aset'],
-                ['title'=>'UMKM','icon'=>'U','color'=>'bg-green','route'=>'umkm'],
-                ['title'=>'Ternak & Tani','icon'=>'T','color'=>'bg-yellow','route'=>'ternak'],
-                ['title'=>'Industri','icon'=>'I','color'=>'bg-red','route'=>'industri'],
-                ['title'=>'Informasi','icon'=>'Info','color'=>'bg-indigo','route'=>'informasi'],
+                ['title'=>'Kependudukan','image'=>'https://i.ibb.co/CKfz2yF/11-removebg-preview.png','route'=>'kependudukan'],
+                ['title'=>'Aset Desa','image'=>'https://i.ibb.co/wdb9j6V/12-removebg-preview.png','route'=>'aset'],
+                ['title'=>'UMKM','image'=>'https://i.ibb.co/jvv6kf4/umkmtoko-removebg-preview.png','route'=>'umkm'],
+                ['title'=>'Ternak & Tani','image'=>'https://i.ibb.co/1zP06Z6/ternaktani.png','route'=>'ternak'],
+                ['title'=>'Industri','image'=>'https://i.ibb.co/PW36Chc/pabrikindustri.png','route'=>'industri'],
+                ['title'=>'Informasi','image'=>asset('informasi.png'),'route'=>'informasi'],
             ];
             @endphp
 
             @foreach($menus as $menu)
             <a href="{{ route($menu['route']) }}" class="card">
                 <div class="card-inner">
-                    <div class="icon-circle {{ $menu['color'] }}">
-                        <span class="icon-letter">{{ $menu['icon'] }}</span>
+                    <div class="icon-circle">
+                        <img src="{{ $menu['image'] }}" class="icon-img">
                     </div>
                     <span class="text-sm font-semibold">{{ $menu['title'] }}</span>
                 </div>
@@ -83,22 +84,23 @@
     <div class="container">
         <h2 class="title-lg">Layanan Administrasi & Buku Tamu</h2>
         <div class="grid-2">
+
             @php
             $fitur = [
-                ['title'=>'Grafik Tamu','icon'=>'G','color'=>'bg-blue-light','route'=>'grafik'],
-                ['title'=>'Administrasi','icon'=>'A','color'=>'bg-green','url'=>'https://pemdesbutuh.id/layanan/login'],
-                ['title'=>'Persyaratan','icon'=>'P','color'=>'bg-purple','route'=>'persyaratan'],
-                ['title'=>'Masukan','icon'=>'M','color'=>'bg-red','route'=>'masukan'],
+                ['title'=>'Grafik Tamu','image'=>'https://i.ibb.co/qs6ZQpb/buku-tamu.png','route'=>'grafik'],
+                ['title'=>'Administrasi','image'=>'https://i.ibb.co/vLtVZ70/layanan.png','url'=>'https://pemdesbutuh.id/layanan/login'],
+                ['title'=>'Persyaratan','image'=>'https://i.ibb.co/C2pWnMD/informasi.png','route'=>'persyaratan'],
+                ['title'=>'Masukan','image'=>asset('pink.png'),'route'=>'masukan'],
             ];
             @endphp
 
             @foreach($fitur as $item)
             <a href="{{ $item['url'] ?? route($item['route']) }}" class="card">
                 <div class="card-inner">
-                    <div class="icon-circle {{ $item['color'] }}">
-                        <span class="icon-letter">{{ $item['icon'] }}</span>
+                    <div class="icon-circle">
+                        <img src="{{ $item['image'] }}" class="icon-img">
                     </div>
-                    <span class="text-sm font-semibold">{{ $item['title'] }}</span>
+                    <span class="text-sm font-semibold text-center">{{ $item['title'] }}</span>
                 </div>
             </a>
             @endforeach
@@ -108,6 +110,36 @@
 </section>
 
 @endsection
+
+
+{{-- STYLE --}}
+@push('styles')
+<style>
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.icon-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+</style>
+@endpush
 
 
 {{-- SCRIPT SLIDER --}}

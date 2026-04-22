@@ -2,14 +2,13 @@
 
 @section('content')
 
+<!-- HEADER -->
+<div class="bg-pink-500 text-white p-4 text-center shadow w-full">
+    <h1 class="text-base md:text-lg font-bold">Grafik Pelayanan</h1>
+    <p class="text-xs md:text-sm opacity-90">Desa Butuh, Boyolali</p>
+</div>
+
 <div class="p-3 md:p-6">
-
-    <!-- HEADER -->
-    <div class="bg-purple-500 text-white p-4 rounded-xl text-center mb-4 shadow">
-        <h1 class="text-base md:text-lg font-bold">Grafik Pelayanan</h1>
-        <p class="text-xs md:text-sm opacity-90">Desa Butuh, Boyolali</p>
-    </div>
-
     <!-- CARD CHART -->
     <div class="bg-white p-3 md:p-5 rounded-xl shadow">
 

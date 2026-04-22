@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layout.apps')
 
 @section('content')
 
 <!-- Header -->
-<div class="bg-blue-500 text-white p-4 flex items-center">
-    <a href="{{ url('/') }}" class="mr-3 text-xl">⬅️</a>
-    <h1 class="text-lg font-semibold">Peta UMKM</h1>
+<div style="background-color:#a099ff;" class="text-white py-8 p-4 flex items-center justify-center">
+    <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
+    <h1 class="text-lg font-semibold text-center">Peta UMKM</h1>
 </div>
 
 <!-- Search -->

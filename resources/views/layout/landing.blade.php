@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <main class="container mx-auto px-4">
+    @include('partials.navbar')
+    <main class="w-full">
         @yield('content')
     </main>
 
