@@ -15,28 +15,10 @@
     <div class="container slider-wrapper">
         <div id="slider">
             <div class="slide" style="background-image:url('{{ asset('slider/1.jpg') }}');">
-                <div class="overlay">
-                    <div>
-                        <h1 style="font-size:20px;font-weight:700">Kitab Utuh Peta</h1>
-                        <p style="margin-top:6px">Sistem Informasi Desa Digital</p>
-                    </div>
-                </div>
             </div>
             <div class="slide" style="background-image:url('{{ asset('slider/2.jpg') }}');">
-                <div class="overlay">
-                    <div>
-                        <h1 style="font-size:20px;font-weight:700">Peta Aset Desa</h1>
-                        <p style="margin-top:6px">Kelola data aset dengan mudah</p>
-                    </div>
-                </div>
             </div>
             <div class="slide" style="background-image:url('{{ asset('slider/3.jpg') }}');">
-                <div class="overlay">
-                    <div>
-                        <h1 style="font-size:20px;font-weight:700">Smart Village</h1>
-                        <p style="margin-top:6px">Digitalisasi Desa Modern</p>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -55,12 +37,12 @@
 
             @php
             $menus = [
-                ['title'=>'Kependudukan','image'=>'https://i.ibb.co/CKfz2yF/11-removebg-preview.png','route'=>'kependudukan'],
-                ['title'=>'Aset Desa','image'=>'https://i.ibb.co/wdb9j6V/12-removebg-preview.png','route'=>'aset'],
-                ['title'=>'UMKM','image'=>'https://i.ibb.co/jvv6kf4/umkmtoko-removebg-preview.png','route'=>'umkm'],
-                ['title'=>'Ternak & Tani','image'=>'https://i.ibb.co/1zP06Z6/ternaktani.png','route'=>'ternak'],
-                ['title'=>'Industri','image'=>'https://i.ibb.co/PW36Chc/pabrikindustri.png','route'=>'industri'],
-                ['title'=>'Informasi','image'=>asset('informasi.png'),'route'=>'informasi'],
+                ['title'=>'Kependudukan','image'=>asset('icon/penduduk.png'),'route'=>'kependudukan'],
+                ['title'=>'Aset Desa','image'=>asset('icon/aset.png'),'route'=>'aset'],
+                ['title'=>'UMKM','image'=>asset('icon/umkm.png'),'route'=>'umkm'],
+                ['title'=>'Ternak & Tani','image'=>asset('icon/ternak.png'),'route'=>'ternak'],
+                ['title'=>'Industri','image'=>asset('icon/industri.png'),'route'=>'industri'],
+                ['title'=>'Informasi','image'=>asset('icon/informasi.png'),'route'=>'informasi'],
             ];
             @endphp
 
@@ -82,15 +64,17 @@
 <!-- FITUR -->
 <section class="section-pad" style="background:#fff">
     <div class="container">
-        <h2 class="title-lg">Layanan Administrasi & Buku Tamu</h2>
+         <h2 class="title-lg">Layanan Administrasi & Buku Tamu Klik dibawah ini</h2>
+        {{-- <h3><img src="{{ asset('icon/layanan.png') }}" alt="Informasi" class="icon-img"> Layanan Administrasi & Buku Tamu Klik dibawah ini</h3>
+         --}}
         <div class="grid-2">
 
             @php
             $fitur = [
-                ['title'=>'Grafik Tamu','image'=>'https://i.ibb.co/qs6ZQpb/buku-tamu.png','route'=>'grafik'],
-                ['title'=>'Administrasi','image'=>'https://i.ibb.co/vLtVZ70/layanan.png','url'=>'https://pemdesbutuh.id/layanan/login'],
-                ['title'=>'Persyaratan','image'=>'https://i.ibb.co/C2pWnMD/informasi.png','route'=>'persyaratan'],
-                ['title'=>'Masukan','image'=>asset('pink.png'),'route'=>'masukan'],
+                ['title'=>'Grafik Tamu','image'=>asset('icon/grafik-tamu.png'),'route'=>'grafik'],
+                ['title'=>'Administrasi','image'=>asset('icon/layanan-admin.png'),'url'=>'https://pemdesbutuh.id/layanan/login'],
+                ['title'=>'Persyaratan','image'=>asset('icon/persyaratan.png'),'route'=>'persyaratan'],
+                ['title'=>'Masukan','image'=>asset('icon/masukan.png'),'route'=>'masukan'],
             ];
             @endphp
 
@@ -130,6 +114,14 @@
     width: 40px;
     height: 40px;
     object-fit: contain;
+}
+
+.title-lg-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
 .card-inner {
