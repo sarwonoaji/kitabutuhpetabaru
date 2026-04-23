@@ -7,6 +7,26 @@ use App\Http\Controllers\TernakController;
 use App\Http\Controllers\GrafikTamuController;
 use App\Http\Controllers\UMKMController;
 use App\Http\Controllers\IndustriController;
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\AsetDesaController;
+
+
+
+Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login']);
+
+Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware('auth:admin')->name('admin.dashboard');
+
+
+Route::get('/admin/aset', [AsetDesaController::class, 'index'])
+    ->middleware('auth:admin')
+    ->name('aset-admin');
+
+
 Route::get('/', function () {
     return view('welcome'); // ganti dari 'welcome' ke 'home'
 });
@@ -72,5 +92,6 @@ Route::get('/dashboard', function () {
 // Static pages
 Route::get('/about', fn() => view('about_page'));
 Route::get('/contact', fn() => view('contact_page'));
+Route::get('/login', fn() => view('admin.login'));
 
 
