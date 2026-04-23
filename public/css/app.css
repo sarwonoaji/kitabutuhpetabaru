@@ -149,18 +149,13 @@ body{
   box-shadow:0 6px 18px rgba(0,0,0,.08)
 }
 
-#slider{
-  display:flex;
-  transition:transform .7s ease-in-out
-}
-
 .slide{
   min-width:100%;
-  height:220px;
+  /* increased height */
+  height:260px;
   background-size:cover;
-  background-position:center
+  background-position:center;
 }
-
 .slide .overlay{
   background:rgba(0,0,0,.4);
   width:100%;
@@ -168,7 +163,45 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#fff
+  color:#fff;
+}
+
+/* Local carousel (Bootstrap-like look) */
+.carousel-local{
+  /* increased height for a taller slider */
+  height:260px;
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+  overflow:hidden;
+  box-shadow:0 3px 8px rgba(0,0,0,.12);
+  position:relative;
+}
+
+.carousel-inner{
+  display:flex;
+  transition:transform .6s ease-in-out;
+  will-change:transform;
+}
+
+.carousel-item{
+  min-width:100%;
+  flex:0 0 100%;
+}
+
+.carousel-item img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+}
+
+@media (max-width:768px){
+  .carousel-local, .carousel-item img{height:200px}
+}
+
+@media (max-width:576px){
+  .carousel-local, .carousel-item img{height:160px}
 }
 
 .dots{
@@ -232,6 +265,23 @@ body{
   margin-bottom:12px;
   box-shadow:0 4px 8px rgba(0,0,0,.08)
 }
+
+#menuBtn {
+    color: #000;
+    border: 1px solid #000;
+    background: transparent;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#menuBtn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+}
+
 
 /* colors */
 .bg-blue{background:#3b82f6}

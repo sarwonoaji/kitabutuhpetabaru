@@ -11,27 +11,27 @@
 </section>
 
 <!-- HERO SLIDER -->
+<!-- HERO SLIDER -->
 <section class="slider-section">
-    <div class="container slider-wrapper">
-        <div id="slider">
-            <div class="slide" style="background-image:url('{{ asset('slider/1.jpg') }}');">
+    <div class="container">
+        <div id="carouselLocal" class="carousel-local">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ asset('slider/1.jpg') }}" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('slider/2.jpg') }}" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('slider/3.jpg') }}" alt="Slide 3">
+                </div>
             </div>
-            <div class="slide" style="background-image:url('{{ asset('slider/2.jpg') }}');">
-            </div>
-            <div class="slide" style="background-image:url('{{ asset('slider/3.jpg') }}');">
-            </div>
-        </div>
-
-        <div class="dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
         </div>
     </div>
 </section>
 
 <!-- MENU UTAMA -->
-<section class="section-pad" style="background:var(--bg-gray)">
+<section class="section-pad" style="background:#fff">
     <div class="container">
         <div class="grid-2">
 
@@ -62,7 +62,8 @@
 </section>
 
 <!-- FITUR -->
-<section class="section-pad" style="background:#fff">
+
+    <section class="section-pad" style="background:var(--bg-gray)">
     <div class="container">
          <h2 class="title-lg">Layanan Administrasi & Buku Tamu Klik dibawah ini</h2>
         {{-- <h3><img src="{{ asset('icon/layanan.png') }}" alt="Informasi" class="icon-img"> Layanan Administrasi & Buku Tamu Klik dibawah ini</h3>
@@ -138,30 +139,28 @@
 @push('scripts')
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById('carouselLocal');
+    if (!carousel) return;
 
-    let index = 0;
+    const inner = carousel.querySelector('.carousel-inner');
+    const items = carousel.querySelectorAll('.carousel-item');
+    let idx = 0;
 
-    const slider = document.getElementById('slider');
-    const dots = document.querySelectorAll('.dot');
-
-    if (!slider) return;
-
-    function showSlide(i) {
-        slider.style.transform = `translateX(-${i * 100}%)`;
-
-        dots.forEach((dot, idx) => {
-            dot.style.opacity = (idx === i) ? "1" : "0.4";
-        });
+    function goTo(i){
+        inner.style.transform = `translateX(-${i * 100}%)`;
     }
 
-    function nextSlide() {
-        index = (index + 1) % 3;
-        showSlide(index);
+    function next(){
+        idx = (idx + 1) % items.length;
+        goTo(idx);
     }
 
-    showSlide(0);
-    setInterval(nextSlide, 3000);
-
+    // start
+    console.log('carouselLocal init', items.length);
+    goTo(0);
+    const intervalId = setInterval(next, 3000);
+    // expose for debug
+    window.__carouselLocal = {goTo, next, items, intervalId};
 });
 </script>
 @endpush
