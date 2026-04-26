@@ -301,3 +301,16 @@ body{
 @media(min-width:768px){
   .grid-2{grid-template-columns:repeat(3,1fr)}
 }
+
+.table tbody tr:hover {
+    transform: scale(1.01);
+    transition: 0.2s;
+}
+
+.btn {
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}

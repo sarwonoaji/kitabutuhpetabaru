@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Industri extends Model
 {
-    protected $table = 'peta_industri';
 
+    public $timestamps = false;
+    protected $table = 'peta_industri';
     protected $fillable = [
         'nama',
         'deskripsi',
