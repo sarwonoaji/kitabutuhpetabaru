@@ -136,7 +136,7 @@
             <button type="submit" class="btn-login">Login</button>
 
             <!-- Buku Tamu -->
-            <a href="#" class="btn btn-light mt-2">BUKU TAMU</a>
+            <a  href="{{ route('bKtamu.create') }}">BUKU TAMU</a>
 
         </form>
     </div>

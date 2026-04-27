@@ -6,11 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class BukuTamu extends Model
 {
+    
+    public $timestamps = false;
     protected $table = 'buku_tamu';
 
     protected $fillable = [
-        'keperluan'
+        'nama',
+        'jenis_kelamin',
+        'alamat',
+        'instansi',
+        'keperluan',
+        'hp_telp',
+        'tanggal'
     ];
 
-    public $timestamps = false;
 }

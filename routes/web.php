@@ -29,6 +29,8 @@ use App\Http\Controllers\Admin\Penduduk62Controller;
 use App\Http\Controllers\Admin\Penduduk72Controller;
 use App\Http\Controllers\Admin\Penduduk82Controller;
 use App\Http\Controllers\Admin\Penduduk92Controller;
+use App\Http\Controllers\Admin\BukuTamuController;
+use App\Http\Controllers\BKTamuController;
 
 
 Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
@@ -189,6 +191,20 @@ Route::middleware('auth:admin')->group(function () {
     Route::delete('/penduduk92/admin/{id}', [Penduduk92Controller::class, 'destroy'])->name('penduduk92.delete');
 
     });
+
+    Route::get('/buku-tamu/admin', [BukuTamuController::class, 'index'])->name('bukutamu.index');
+    Route::delete('/buku-tamu/admin/{id}', [BukuTamuController::class, 'destroy'])->name('bukutamu.delete');
+    Route::get('/buku-tamu/admin/create', [BukuTamuController::class, 'create'])->name('bukutamu.create');
+    Route::post('/buku-tamu/admin/store', [BukuTamuController::class, 'store'])->name('bukutamu.store');
+    Route::get('/buku-tamu/admin/{id}/edit', [BukuTamuController::class, 'edit'])->name('bukutamu.edit');
+    Route::match(['put', 'patch'], '/buku-tamu/admin/{id}', [BukuTamuController::class, 'update'])->name('bukutamu.update');                
+
+
+    //PUBLIC ROUTES
+    Route::get('/buku-tamu/create', [BKTamuController::class, 'create'])->name('bKtamu.create');
+    Route::post('/buku-tamu/store', [BKTamuController::class, 'store'])->name('bKtamu.store');
+    
+
 
 Route::get('/', function () {
     return view('welcome'); // ganti dari 'welcome' ke 'home'
