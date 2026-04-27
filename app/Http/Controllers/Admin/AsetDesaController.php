@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Aset;
 use Illuminate\Http\Request;
+use App\Services\ImageService;
 
 class AsetDesaController extends Controller
 {
+    private const FOLDER = 'img/aset';
+
     public function index(Request $request)
     {
         $keyword = $request->keyword;
@@ -43,18 +46,11 @@ class AsetDesaController extends Controller
             'longitude' => 'required',
         ]);
 
-        // upload foto
         if ($request->file('foto')) {
-            $file = $request->file('foto');
-            $filename = uniqid('aset_', true) . '.' . $file->extension();
-            $destination = public_path('img/aset');
-
-            if (!file_exists($destination)) {
-                mkdir($destination, 0755, true);
-            }
-
-            $file->move($destination, $filename);
-            $data['foto'] = $filename;
+            $data['foto'] = ImageService::compress(
+                $request->file('foto'),
+                self::FOLDER
+            );
         }
 
         Aset::create($data);
@@ -84,16 +80,15 @@ class AsetDesaController extends Controller
         ]);
 
         if ($request->file('foto')) {
-            $file = $request->file('foto');
-            $filename = uniqid('aset_', true) . '.' . $file->extension();
-            $destination = public_path('img/aset');
 
-            if (!file_exists($destination)) {
-                mkdir($destination, 0755, true);
-            }
+            // hapus foto lama
+            ImageService::delete(self::FOLDER, $aset->foto);
 
-            $file->move($destination, $filename);
-            $data['foto'] = $filename;
+            // upload baru
+            $data['foto'] = ImageService::compress(
+                $request->file('foto'),
+                self::FOLDER
+            );
         }
 
         $aset->update($data);
@@ -104,7 +99,14 @@ class AsetDesaController extends Controller
 
     public function destroy($id)
     {
-        Aset::findOrFail($id)->delete();
-        return redirect()->route('aset.index')->with('success', 'Data berhasil dihapus');
+        $aset = Aset::findOrFail($id);
+
+        // hapus file
+        ImageService::delete(self::FOLDER, $aset->foto);
+
+        $aset->delete();
+
+        return redirect()->route('aset.index')
+            ->with('success', 'Data berhasil dihapus');
     }
 }

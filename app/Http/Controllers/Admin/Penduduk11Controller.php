@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Penduduk11;
 use Illuminate\Http\Request;
+use App\Services\ImageService;
 
 class Penduduk11Controller extends Controller
 {
+    private const FOLDER = 'img/penduduk11';
     public function index(Request $request)
     {
         $keyword = $request->keyword;
@@ -42,18 +44,11 @@ class Penduduk11Controller extends Controller
             'longitude' => 'required',
         ]);
 
-        // upload foto
         if ($request->file('foto')) {
-            $file = $request->file('foto');
-            $filename = uniqid('penduduk11_', true) . '.' . $file->extension();
-            $destination = public_path('img/penduduk11');
-
-            if (!file_exists($destination)) {
-                mkdir($destination, 0755, true);
-            }
-
-            $file->move($destination, $filename);
-            $data['foto'] = $filename;
+            $data['foto'] = ImageService::compress(
+                $request->file('foto'),
+                self::FOLDER
+            );
         }
 
         Penduduk11::create($data);
@@ -81,17 +76,16 @@ class Penduduk11Controller extends Controller
             'longitude' => 'required',
         ]);
 
-        if ($request->file('foto')) {
-            $file = $request->file('foto');
-            $filename = uniqid('penduduk11_', true) . '.' . $file->extension();
-            $destination = public_path('img/penduduk11');
+     if ($request->file('foto')) {
 
-            if (!file_exists($destination)) {
-                mkdir($destination, 0755, true);
-            }
+            // hapus foto lama
+            ImageService::delete(self::FOLDER, $penduduk11->foto);
 
-            $file->move($destination, $filename);
-            $data['foto'] = $filename;
+            // upload baru
+            $data['foto'] = ImageService::compress(
+                $request->file('foto'),
+                self::FOLDER
+            );
         }
 
         $penduduk11->update($data);
@@ -102,7 +96,13 @@ class Penduduk11Controller extends Controller
 
     public function destroy($id)
     {
-        Penduduk11::findOrFail($id)->delete();
+        $penduduk11 = Penduduk11::findOrFail($id);
+
+        // hapus foto lama
+        ImageService::delete(self::FOLDER, $penduduk11->foto);
+
+        $penduduk11->delete();
+
         return redirect()->route('penduduk11.index')->with('success', 'Data berhasil dihapus');
     }
 }

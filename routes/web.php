@@ -20,6 +20,15 @@ use App\Http\Controllers\Admin\Penduduk51Controller;
 use App\Http\Controllers\Admin\Penduduk61Controller;
 use App\Http\Controllers\Admin\Penduduk71Controller;
 use App\Http\Controllers\Admin\Penduduk81Controller;
+use App\Http\Controllers\Admin\Penduduk12Controller;
+use App\Http\Controllers\Admin\Penduduk22Controller;
+use App\Http\Controllers\Admin\Penduduk32Controller;
+use App\Http\Controllers\Admin\Penduduk42Controller;
+use App\Http\Controllers\Admin\Penduduk52Controller;
+use App\Http\Controllers\Admin\Penduduk62Controller;
+use App\Http\Controllers\Admin\Penduduk72Controller;
+use App\Http\Controllers\Admin\Penduduk82Controller;
+use App\Http\Controllers\Admin\Penduduk92Controller;
 
 
 Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
@@ -30,8 +39,6 @@ Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admi
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->middleware('auth:admin')->name('admin.dashboard');
-
-
 
 
 Route::middleware('auth:admin')->group(function () {
@@ -118,7 +125,70 @@ Route::middleware('auth:admin')->group(function () {
     Route::match(['put', 'patch'], '/penduduk81/admin/{id}', [Penduduk81Controller::class, 'update'])->name('penduduk81.update');
     Route::delete('/penduduk81/admin/{id}', [Penduduk81Controller::class, 'destroy'])->name('penduduk81.delete');
 
-});
+    Route::get('/penduduk12/admin', [Penduduk12Controller::class, 'index'])->name('penduduk12.index');
+    Route::get('/penduduk12/admin/create', [Penduduk12Controller::class, 'create'])->name('penduduk12.create');
+    Route::post('/penduduk12/admin/store', [Penduduk12Controller::class, 'store'])->name('penduduk12.store');
+    Route::get('/penduduk12/admin/{id}/edit', [Penduduk12Controller::class, 'edit'])->name('penduduk12.edit');
+    Route::match(['put', 'patch'], '/penduduk12/admin/{id}', [Penduduk12Controller::class, 'update'])->name('penduduk12.update');
+    Route::delete('/penduduk12/admin/{id}', [Penduduk12Controller::class, 'destroy'])->name('penduduk12.delete');   
+
+    Route::get('/penduduk22/admin', [Penduduk22Controller::class, 'index'])->name('penduduk22.index');
+    Route::get('/penduduk22/admin/create', [Penduduk22Controller::class, 'create'])->name('penduduk22.create');
+    Route::post('/penduduk22/admin/store', [Penduduk22Controller::class, 'store'])->name('penduduk22.store');
+    Route::get('/penduduk22/admin/{id}/edit', [Penduduk22Controller::class, 'edit'])->name('penduduk22.edit');
+    Route::match(['put', 'patch'], '/penduduk22/admin/{id}', [Penduduk22Controller::class, 'update'])->name('penduduk22.update');
+    Route::delete('/penduduk22/admin/{id}', [Penduduk22Controller::class, 'destroy'])->name('penduduk22.delete');   
+
+    Route::get('/penduduk32/admin', [Penduduk32Controller::class, 'index'])->name('penduduk32.index');
+    Route::get('/penduduk32/admin/create', [Penduduk32Controller::class, 'create'])->name('penduduk32.create');
+    Route::post('/penduduk32/admin/store', [Penduduk32Controller::class, 'store'])->name('penduduk32.store');
+    Route::get('/penduduk32/admin/{id}/edit', [Penduduk32Controller::class, 'edit'])->name('penduduk32.edit');
+    Route::match(['put', 'patch'], '/penduduk32/admin/{id}', [Penduduk32Controller::class, 'update'])->name('penduduk32.update');
+    Route::delete('/penduduk32/admin/{id}', [Penduduk32Controller::class, 'destroy'])->name('penduduk32.delete');
+    
+    Route::get('/penduduk42/admin', [Penduduk42Controller::class, 'index'])->name('penduduk42.index');
+    Route::get('/penduduk42/admin/create', [Penduduk42Controller::class, 'create'])->name('penduduk42.create');
+    Route::post('/penduduk42/admin/store', [Penduduk42Controller::class, 'store'])->name('penduduk42.store');
+    Route::get('/penduduk42/admin/{id}/edit', [Penduduk42Controller::class, 'edit'])->name('penduduk42.edit');
+    Route::match(['put', 'patch'], '/penduduk42/admin/{id}', [Penduduk42Controller::class, 'update'])->name('penduduk42.update');
+    Route::delete('/penduduk42/admin/{id}', [Penduduk42Controller::class, 'destroy'])->name('penduduk42.delete');   
+    
+    Route::get('/penduduk52/admin', [Penduduk52Controller::class, 'index'])->name('penduduk52.index');
+    Route::get('/penduduk52/admin/create', [Penduduk52Controller::class, 'create'])->name('penduduk52.create');
+    Route::post('/penduduk52/admin/store', [Penduduk52Controller::class, 'store'])->name('penduduk52.store');
+    Route::get('/penduduk52/admin/{id}/edit', [Penduduk52Controller::class, 'edit'])->name('penduduk52.edit');
+    Route::match(['put', 'patch'], '/penduduk52/admin/{id}', [Penduduk52Controller::class, 'update'])->name('penduduk52.update');
+    Route::delete('/penduduk52/admin/{id}', [Penduduk52Controller::class, 'destroy'])->name('penduduk52.delete');   
+    
+    Route::get('/penduduk62/admin', [Penduduk62Controller::class, 'index'])->name('penduduk62.index');
+    Route::get('/penduduk62/admin/create', [Penduduk62Controller::class, 'create'])->name('penduduk62.create');
+    Route::post('/penduduk62/admin/store', [Penduduk62Controller::class, 'store'])->name('penduduk62.store');
+    Route::get('/penduduk62/admin/{id}/edit', [Penduduk62Controller::class, 'edit'])->name('penduduk62.edit');
+    Route::match(['put', 'patch'], '/penduduk62/admin/{id}', [Penduduk62Controller::class, 'update'])->name('penduduk62.update');
+    Route::delete('/penduduk62/admin/{id}', [Penduduk62Controller::class, 'destroy'])->name('penduduk62.delete');   
+    
+    Route::get('/penduduk72/admin', [Penduduk72Controller::class, 'index'])->name('penduduk72.index');          
+    Route::get('/penduduk72/admin/create', [Penduduk72Controller::class, 'create'])->name('penduduk72.create');
+    Route::post('/penduduk72/admin/store', [Penduduk72Controller::class, 'store'])->name('penduduk72.store');
+    Route::get('/penduduk72/admin/{id}/edit', [Penduduk72Controller::class, 'edit'])->name('penduduk72.edit');
+    Route::match(['put', 'patch'], '/penduduk72/admin/{id}', [Penduduk72Controller::class, 'update'])->name('penduduk72.update');
+    Route::delete('/penduduk72/admin/{id}', [Penduduk72Controller::class, 'destroy'])->name('penduduk72.delete');       
+
+    Route::get('/penduduk82/admin', [Penduduk82Controller::class, 'index'])->name('penduduk82.index');
+    Route::get('/penduduk82/admin/create', [Penduduk82Controller::class, 'create'])->name('penduduk82.create');
+    Route::post('/penduduk82/admin/store', [Penduduk82Controller::class, 'store'])->name('penduduk82.store');
+    Route::get('/penduduk82/admin/{id}/edit', [Penduduk82Controller::class, 'edit'])->name('penduduk82.edit');
+    Route::match(['put', 'patch'], '/penduduk82/admin/{id}', [Penduduk82Controller::class, 'update'])->name('penduduk82.update');
+    Route::delete('/penduduk82/admin/{id}', [Penduduk82Controller::class, 'destroy'])->name('penduduk82.delete');       
+
+    Route::get('/penduduk92/admin', [Penduduk92Controller::class, 'index'])->name('penduduk92.index');
+    Route::get('/penduduk92/admin/create', [Penduduk92Controller::class, 'create'])->name('penduduk92.create');
+    Route::post('/penduduk92/admin/store', [Penduduk92Controller::class, 'store'])->name('penduduk92.store');
+    Route::get('/penduduk92/admin/{id}/edit', [Penduduk92Controller::class, 'edit'])->name('penduduk92.edit');
+    Route::match(['put', 'patch'], '/penduduk92/admin/{id}', [Penduduk92Controller::class, 'update'])->name('penduduk92.update');
+    Route::delete('/penduduk92/admin/{id}', [Penduduk92Controller::class, 'destroy'])->name('penduduk92.delete');
+
+    });
 
 Route::get('/', function () {
     return view('welcome'); // ganti dari 'welcome' ke 'home'

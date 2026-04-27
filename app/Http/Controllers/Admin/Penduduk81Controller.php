@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Penduduk81;
 use Illuminate\Http\Request;
+use App\Services\ImageService;
 
 class Penduduk81Controller extends Controller
 {
+    private const FOLDER = 'img/penduduk81';
     public function index(Request $request)
     {
         $keyword = $request->keyword;
@@ -43,16 +45,10 @@ class Penduduk81Controller extends Controller
 
         // upload foto
         if ($request->file('foto')) {
-            $file = $request->file('foto');
-            $filename = uniqid('penduduk81_', true) . '.' . $file->extension();
-            $destination = public_path('img/penduduk81');
-
-            if (!file_exists($destination)) {
-                mkdir($destination, 0755, true);
-            }
-
-            $file->move($destination, $filename);
-            $data['foto'] = $filename;
+            $data['foto'] = ImageService::compress(
+                $request->file('foto'),
+                self::FOLDER
+            );
         }
 
         Penduduk81::create($data);
@@ -80,16 +76,14 @@ class Penduduk81Controller extends Controller
         ]);
 
         if ($request->file('foto')) {
-            $file = $request->file('foto');
-            $filename = uniqid('penduduk81_', true) . '.' . $file->extension();
-            $destination = public_path('img/penduduk81');
+            // hapus foto lama
+            ImageService::delete(self::FOLDER, $penduduk81->foto);
 
-            if (!file_exists($destination)) {
-                mkdir($destination, 0755, true);
-            }
-
-            $file->move($destination, $filename);
-            $data['foto'] = $filename;
+            // upload baru
+            $data['foto'] = ImageService::compress(
+                $request->file('foto'),
+                self::FOLDER
+            );
         }
 
         $penduduk81->update($data);
@@ -100,7 +94,13 @@ class Penduduk81Controller extends Controller
 
     public function destroy($id)
     {
-        Penduduk81::findOrFail($id)->delete();
+        $penduduk81 = Penduduk81::findOrFail($id);
+
+        // hapus foto lama
+        ImageService::delete(self::FOLDER, $penduduk81->foto);
+
+        $penduduk81->delete();
+
         return redirect()->route('penduduk81.index')->with('success', 'Data berhasil dihapus');
     }
 }

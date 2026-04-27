@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\TernakTani;
 use Illuminate\Http\Request;
+use App\Services\ImageService;
 
 class TernakTaniController extends Controller
 {
+    private const FOLDER = 'img/ternak-tani';
     public function index(Request $request)
     {
         $keyword = $request->keyword;
@@ -46,16 +48,10 @@ class TernakTaniController extends Controller
 
         // upload foto
         if ($request->file('foto')) {
-            $file = $request->file('foto');
-            $filename = uniqid('ternaktani_', true) . '.' . $file->extension();
-            $destination = public_path('img/ternak-tani');
-
-            if (!file_exists($destination)) {
-                mkdir($destination, 0755, true);
-            }
-
-            $file->move($destination, $filename);
-            $data['foto'] = $filename;
+            $data['foto'] = ImageService::compress(
+                $request->file('foto'),
+                self::FOLDER
+            );
         }
 
         TernakTani::create($data);
@@ -86,16 +82,14 @@ class TernakTaniController extends Controller
         ]);
 
         if ($request->file('foto')) {
-            $file = $request->file('foto');
-            $filename = uniqid('ternaktani_', true) . '.' . $file->extension();
-            $destination = public_path('img/ternak-tani');
+            // hapus foto lama
+            ImageService::delete(self::FOLDER, $ternaktani->foto);
 
-            if (!file_exists($destination)) {
-                mkdir($destination, 0755, true);
-            }
-
-            $file->move($destination, $filename);
-            $data['foto'] = $filename;
+            // upload baru
+            $data['foto'] = ImageService::compress(
+                $request->file('foto'),
+                self::FOLDER
+            );
         }
 
         $ternaktani->update($data);
@@ -106,7 +100,13 @@ class TernakTaniController extends Controller
 
     public function destroy($id)
     {
-        TernakTani::findOrFail($id)->delete();
-        return redirect()->back()->with('success', 'Data berhasil dihapus');
+        $ternaktani = TernakTani::findOrFail($id);
+
+        // hapus foto lama
+        ImageService::delete(self::FOLDER, $ternaktani->foto);
+
+        $ternaktani->delete();
+
+        return redirect()->route('ternaktani.index')->with('success', 'Data berhasil dihapus');
     }
 }

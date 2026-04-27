@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Industri;
 use Illuminate\Http\Request;
+use App\Services\ImageService;
 
 class IndustriAdminController extends Controller
 {
+    private const FOLDER = 'img/industri';
     public function index(Request $request)
     {
         $keyword = $request->keyword;
@@ -44,16 +46,10 @@ class IndustriAdminController extends Controller
 
         // upload foto
         if ($request->file('foto')) {
-            $file = $request->file('foto');
-            $filename = uniqid('industri_', true) . '.' . $file->extension();
-            $destination = public_path('img/industri');
-
-            if (!file_exists($destination)) {
-                mkdir($destination, 0755, true);
-            }
-
-            $file->move($destination, $filename);
-            $data['foto'] = $filename;
+            $data['foto'] = ImageService::compress(
+                $request->file('foto'),
+                self::FOLDER
+            );
         }
 
         Industri::create($data);
@@ -82,16 +78,14 @@ class IndustriAdminController extends Controller
         ]);
 
         if ($request->file('foto')) {
-            $file = $request->file('foto');
-            $filename = uniqid('industri_', true) . '.' . $file->extension();
-            $destination = public_path('img/industri');
+            // hapus foto lama
+            ImageService::delete(self::FOLDER, $industri->foto);
 
-            if (!file_exists($destination)) {
-                mkdir($destination, 0755, true);
-            }
-
-            $file->move($destination, $filename);
-            $data['foto'] = $filename;
+            // upload baru
+            $data['foto'] = ImageService::compress(
+                $request->file('foto'),
+                self::FOLDER
+            );
         }
 
         $industri->update($data);
@@ -102,7 +96,13 @@ class IndustriAdminController extends Controller
 
     public function destroy($id)
     {
-        Industri::findOrFail($id)->delete();
+        $industri = Industri::findOrFail($id);
+
+        // hapus foto lama
+        ImageService::delete(self::FOLDER, $industri->foto);
+
+        $industri->delete();
+
         return redirect()->route('industri.index')->with('success', 'Data berhasil dihapus');
     }
 }

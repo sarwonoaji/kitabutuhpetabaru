@@ -3,49 +3,46 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\UMKM;
+use App\Models\Penduduk12;
 use Illuminate\Http\Request;
 use App\Services\ImageService;
 
-class UMKMAdminController extends Controller
+class Penduduk12Controller extends Controller
 {
-    private const FOLDER = 'img/umkm';
-
+    private const FOLDER = 'img/penduduk12';
     public function index(Request $request)
     {
         $keyword = $request->keyword;
 
-        $query = UMKM::orderBy('id', 'desc');
+        $query = Penduduk12::orderBy('id', 'desc');
 
         if ($keyword) {
             $query->where(function ($sub) use ($keyword) {
                 $sub->where('nama', 'like', "%$keyword%")
-                    ->orWhere('deskripsi', 'like', "%$keyword%");
+                    ->orWhere('keterangan', 'like', "%$keyword%");
             });
         }
 
-        $umkm = $query->paginate(5)->appends(['keyword' => $keyword]);
+        $penduduk12 = $query->paginate(5)->appends(['keyword' => $keyword]);
 
-        return view('admin.umkm.index', compact('umkm'));
+        return view('admin.penduduk12.index', compact('penduduk12'));
     }
 
     public function create()
     {
-        return view('admin.umkm.create');
+        return view('admin.penduduk12.create');
     }
 
     public function store(Request $request)
     {
         $data = $request->validate([
             'nama' => 'required',
-            'deskripsi' => 'required',
-            'harga' => 'required',
+            'keterangan' => 'required',
             'foto' => 'image|mimes:jpg,jpeg,png|max:1024',
             'latitude' => 'required',
             'longitude' => 'required',
         ]);
 
-        // upload foto
         if ($request->file('foto')) {
             $data['foto'] = ImageService::compress(
                 $request->file('foto'),
@@ -53,34 +50,34 @@ class UMKMAdminController extends Controller
             );
         }
 
-        UMKM::create($data);
+        Penduduk12::create($data);
 
-        return redirect()->route('umkm.index')
+        return redirect()->route('penduduk12.index')
             ->with('success', 'Data berhasil ditambahkan!');
     }
 
     public function edit($id)
     {
-        $umkm = UMKM::findOrFail($id);
-        return view('admin.umkm.edit', compact('umkm'));
+        $penduduk12 = Penduduk12::findOrFail($id);
+        return view('admin.penduduk12.edit', compact('penduduk12'));
     }
 
     public function update(Request $request, $id)
     {
-        $umkm = UMKM::findOrFail($id);
+        $penduduk12 = Penduduk12::findOrFail($id);
 
         $data = $request->validate([
             'nama' => 'required',
-            'deskripsi' => 'required',
-            'harga' => 'required',
+            'keterangan' => 'required',
             'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:1024',
             'latitude' => 'required',
             'longitude' => 'required',
         ]);
 
-        if ($request->file('foto')) {
+     if ($request->file('foto')) {
+
             // hapus foto lama
-            ImageService::delete(self::FOLDER, $umkm->foto);
+            ImageService::delete(self::FOLDER, $penduduk12->foto);
 
             // upload baru
             $data['foto'] = ImageService::compress(
@@ -88,22 +85,22 @@ class UMKMAdminController extends Controller
                 self::FOLDER
             );
         }
-            
-        $umkm->update($data);
 
-        return redirect()->route('umkm.index')
+        $penduduk12->update($data);
+
+        return redirect()->route('penduduk12.index')
             ->with('success', 'Data berhasil diubah!');
     }
 
     public function destroy($id)
     {
-        $umkm = UMKM::findOrFail($id);
+        $penduduk12 = Penduduk12::findOrFail($id);
 
         // hapus foto lama
-        ImageService::delete(self::FOLDER, $umkm->foto);
+        ImageService::delete(self::FOLDER, $penduduk12->foto);
 
-        $umkm->delete();
+        $penduduk12->delete();
 
-        return redirect()->route('umkm.index')->with('success', 'Data berhasil dihapus');
+        return redirect()->route('penduduk12.index')->with('success', 'Data berhasil dihapus');
     }
 }

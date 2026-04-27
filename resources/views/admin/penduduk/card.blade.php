@@ -127,7 +127,7 @@
           <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: goldenrod;">
             <img src="{{ asset('dashboard/penduduk/2.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('umkm.index') }}" class="btn btn-light">RT 1 / RW 2</a>
+              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('penduduk12.index') }}" class="btn btn-light">RT 1 / RW 2</a>
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@
           <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: goldenrod;">
             <img src="{{ asset('dashboard/penduduk/2.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('umkm.index') }}" class="btn btn-light">RT 2 / RW 2</a>
+              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('penduduk22.index') }}" class="btn btn-light">RT 2 / RW 2</a>
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@
           <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: goldenrod;">
             <img src="{{ asset('dashboard/penduduk/2.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('umkm.index') }}" class="btn btn-light">RT 3 / RW 2</a>
+              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('penduduk32.index') }}" class="btn btn-light">RT 3 / RW 2</a>
             </div>
           </div>
         </div>
@@ -151,7 +151,7 @@
           <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: goldenrod;">
             <img src="{{ asset('dashboard/penduduk/2.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('umkm.index') }}" class="btn btn-light">RT 4 / RW 2</a>
+              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('penduduk42.index') }}" class="btn btn-light">RT 4 / RW 2</a>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@
           <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: goldenrod;">
             <img src="{{ asset('dashboard/penduduk/2.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('umkm.index') }}" class="btn btn-light">RT 5 / RW 2</a>
+              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('penduduk52.index') }}" class="btn btn-light">RT 5 / RW 2</a>
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@
           <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: goldenrod;">
             <img src="{{ asset('dashboard/penduduk/2.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('umkm.index') }}" class="btn btn-light">RT 6 / RW 2</a>
+              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('penduduk62.index') }}" class="btn btn-light">RT 6 / RW 2</a>
             </div>
           </div>
         </div>
@@ -179,7 +179,7 @@
           <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: goldenrod;">
             <img src="{{ asset('dashboard/penduduk/2.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('umkm.index') }}" class="btn btn-light">RT 7 / RW 2</a>
+              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('penduduk72.index') }}" class="btn btn-light">RT 7 / RW 2</a>
             </div>
           </div>
         </div>
@@ -187,7 +187,7 @@
           <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: goldenrod;">
             <img src="{{ asset('dashboard/penduduk/2.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('umkm.index') }}" class="btn btn-light">RT 8 / RW 2</a>
+              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('penduduk82.index') }}" class="btn btn-light">RT 8 / RW 2</a>
             </div>
           </div>
         </div>
@@ -198,7 +198,7 @@
           <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: goldenrod;">
             <img src="{{ asset('dashboard/penduduk/2.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('umkm.index') }}" class="btn btn-light">RT 9 / RW 2</a>
+              <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('penduduk92.index') }}" class="btn btn-light">RT 9 / RW 2</a>
             </div>
           </div>
         </div>
