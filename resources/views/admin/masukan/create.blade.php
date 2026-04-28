@@ -1,10 +1,10 @@
 @extends('layout.apps')
 
 @section('content')
-<div class="h-10">
-    <h4 class="text-2xl text-slate-900 text-center">
-        Komentar Pembaruan
-    </h4>
+<!-- Header -->
+<div style="background-color:#a099ff;" class="text-white py-8 p-4 flex items-center justify-center">
+    <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
+    <h1 class="text-2xl font-semibold text-center">Masukan</h1>
 </div>
 <div class="min-h-screen bg-slate-100 py-10">
     <div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -40,8 +40,7 @@
                         <input type="file" name="foto" class="block w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100">
                     </div>
                 <div class="flex flex-col gap-3 sm:flex-row sm:justify-end">
-                    <a href="{{ route('masukan.index') }}" class="inline-flex items-center rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50">Kembali</a>
-                    <button type="submit" class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-500/10 transition hover:bg-blue-700">Tambah</button>
+                   <button type="submit" class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-500/10 transition hover:bg-blue-700">Kirim</button>
                 </div>
             </form>
         </div>

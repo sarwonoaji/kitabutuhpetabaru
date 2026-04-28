@@ -1,5 +1,6 @@
 @extends('layout.landing')
 
+@section('title', 'Kita Butuh Peta')
 @section('content')
 
 <!-- TEKS SAMBUTAN -->

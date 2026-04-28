@@ -298,6 +298,159 @@ body{
 .title-lg{font-size:18px;font-weight:600;margin-bottom:12px}
 
 /* DESKTOP GRID */
+
+/* Styles for informasi page */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Poppins:wght@300&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  background-color: #a9a9a9;
+  justify-content: space-around;
+  /* padding: 20px 0; */
+  color: #fff;
+  height: 50px;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #fff;
+}
+
+/* Responsive Breakpoint */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+  nav ul {
+      width: 50%;
+  }
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+  nav ul {
+      display: none;
+  }
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.text-abu {
+  color: #645e5e;
+}
+
+.bg-biru {
+  background-color: #a9a9a9;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 60px;
+  top: 0;
+}
+
+.wrap-bullet {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.form-control {
+  border: none;
+}
+
+.iconify {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+}
+
+.carousel {
+  height: 150px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.carousel img {
+  height: 150px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.icon-menu {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.sh-box {
+  background-color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px #000000a1;
+}
+
+/* aneka menu css */
+.icon-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+.rounded-50img {
+  width: 100px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-anekamenu {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+.sh-box {
+  background-color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: auto;
+  width: 360px;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px #000000a1;
+}
+
+/* Larger font for count numbers */
+.count-number {
+  font-size: 24px;
+  font-weight: bold;
+}
 @media(min-width:768px){
   .grid-2{grid-template-columns:repeat(3,1fr)}
 }
@@ -313,4 +466,43 @@ body{
 
 .btn:hover {
     transform: translateY(-1px);
+}
+
+/* ================= KEPENDUDUKAN PAGE ================= */
+.kependudukan-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.kependudukan-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.menu-item {
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    color: inherit;
+    text-decoration: none;
+}
+
+.icon-menu {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 20px;
+    object-fit: cover;
+}
+
+.text-gray {
+    color: #645e5e;
 }

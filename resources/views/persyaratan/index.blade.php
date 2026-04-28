@@ -1,22 +1,24 @@
 @extends('layout.apps')
 
+@section('title', 'Persyaratan Administrasi')
 @section('content')
 
+<style>
+body {
+    background-image: url(/abc2.jpg);
+}
+</style>
 
-<div class="bg-pink-500 text-white p-4 text-center shadow w-full">
-    <h1 class="text-base md:text-lg font-bold">Informasi Pelayanan</h1>
-    <p class="text-xs md:text-sm opacity-90">Administrasi Kependudukan</p>
-</div>
 
 <div class="p-4">
 
-    <!-- HEADER -->
-    <!-- <div class="bg-purple-400 text-white p-4 rounded-xl text-center mb-4 shadow">
-        <h1 class="text-base md:text-lg font-bold">Informasi Pelayanan</h1>
-        <p class="text-xs md:text-sm">Administrasi Kependudukan</p>
-    </div> -->
+        <br>
+        <center>
+            <h1 class="text-base md:text-lg font-bold">Informasi Pelayanan</h1>
+            <h2 class="text-xs md:text-sm opacity-90">Administrasi Kependudukan</h2>
+        </center>
 
-    <!-- BOX -->
+
     <div class="bg-white rounded-xl shadow p-4 max-w-md mx-auto">
 
         <div class="flex flex-col gap-3">

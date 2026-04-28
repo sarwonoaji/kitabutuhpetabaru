@@ -1,15 +1,22 @@
 @extends('layout.apps')
 
+@section('title', 'Pencatatan Akta Pengakuan Anak')
 @section('content')
 
+<style>
+body {
+    background-image: url(/abc2.jpg);
+}
+</style>
+
 <!-- HEADER -->
-<div class="bg-purple-500 text-white p-4 text-center">
-    <h1 class="text-lg font-bold">Pencatatan Akta</h1>
-    <h2 class="text-sm">Pengakuan Anak</h2>
+<div class="text-black p-4 text-center">
+    <h1 class="text-xl font-bold">Pencatatan Akta</h1>
+    <h2 class="text-lg">Pengakuan Anak</h2>
 </div>
 
 <!-- CONTENT -->
-<div class="flex justify-center p-4 bg-gray-100 min-h-screen">
+<div class="flex justify-center p-4 min-h-screen">
 
     <div class="bg-white rounded-xl shadow-md p-4 w-full max-w-sm">
 

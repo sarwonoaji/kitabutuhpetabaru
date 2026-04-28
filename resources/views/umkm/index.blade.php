@@ -1,5 +1,6 @@
 @extends('layout.apps')
 
+@section('title', 'Peta UMKM') 
 @section('content')
 
 <!-- Header -->

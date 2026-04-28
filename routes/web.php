@@ -30,8 +30,11 @@ use App\Http\Controllers\Admin\Penduduk72Controller;
 use App\Http\Controllers\Admin\Penduduk82Controller;
 use App\Http\Controllers\Admin\Penduduk92Controller;
 use App\Http\Controllers\Admin\BukuTamuController;
-use App\Http\Controllers\BKTamuController;
+use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\KependudukanController;
 use App\Http\Controllers\Admin\MasukanController;
+use App\Http\Controllers\BKTamuController;
+    
 
 
 Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
@@ -222,13 +225,13 @@ Route::get('/', function () {
 });
 
 // ================= MENU UTAMA =================
-Route::get('/kependudukan', fn() => view('kependudukan.index'))->name('kependudukan');
+Route::get('/kependudukan', [KependudukanController::class, 'index'])->name('kependudukan');
 //Route::get('/aset-desa', fn() => view('aset.index'))->name('aset');
 Route::get('/aset-desa', [AsetController::class, 'index'])->name('aset');
 Route::get('/ternak-tani', [TernakController::class, 'index'])->name('ternak');
 Route::get('/umkm', [UMKMController::class, 'index'])->name('umkm');
 Route::get('/industri', [IndustriController::class, 'index'])->name('industri');
-Route::get('/informasi', fn() => view('informasi.index'))->name('informasi');
+Route::get('/informasi', [InformasiController::class, 'index'])->name('informasi');
 
 // ================= FITUR =================
 

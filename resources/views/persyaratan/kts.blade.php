@@ -1,15 +1,21 @@
 @extends('layout.apps')
 
+@section('title', 'Kartu Tinggal Sementara')
 @section('content')
 
+<style>
+body {
+    background-image: url(/abc2.jpg);
+}
+</style>
 <!-- HEADER -->
-<div class="bg-purple-500 text-white p-4 text-center">
-    <h1 class="text-lg font-bold">Persyaratan Kartu</h1>
-    <h2 class="text-sm">Tinggal Sementara</h2>
+<div class="text-black p-4 text-center">
+    <h1 class="text-xl font-bold">Persyaratan Kartu</h1>
+    <h2 class="text-lg">Tinggal Sementara</h2>
 </div>
 
 <!-- CONTENT -->
-<div class="flex justify-center p-4 bg-gray-100 min-h-screen">
+<div class="flex justify-center p-4 min-h-screen">
 
     <div class="bg-white rounded-xl shadow-md p-4 w-full max-w-sm">
 
