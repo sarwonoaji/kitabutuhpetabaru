@@ -70,10 +70,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // POPUP + BUTTON RUTE
             marker.bindPopup(`
-                <div style="font-size:13px;">
-                    <b>${d.nama ?? '-'}</b><br>
-                    Deskripsi: ${d.deskripsi ?? '-'}<br>
-                    Jumlah: ${d.jumlah ?? '-'}<br>
+                <p>
+                <i class="fas fa-tags"></i>
+                <b>Nama</b> : ${d.nama}
+                </p>
+                <p>
+                <i class="far fa-file-alt"></i>
+                <b>Deskripsi</b> : ${d.deskripsi}
+                </p>
+                <p>
+                <i class="fas fa-chart-line"></i>
+                <b>Jumlah</b> : ${d.jumlah}
+                </p>
+                <p>
+                <i class="fas fa-wallet"></i>
+                <b>Harga</b> : ${d.harga}
+                </p>
                     ${d.foto ? `<img src="/img/ternak-tani/${d.foto}" width="200" style="margin-top:5px;border-radius:8px;">` : ''}
 
                     <br><br>

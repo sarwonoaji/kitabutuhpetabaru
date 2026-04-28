@@ -10,14 +10,13 @@ body {
 </style>
 
 
-<div class="p-4">
-
-        <br>
-        <center>
-            <h1 class="text-base md:text-lg font-bold">Informasi Pelayanan</h1>
-            <h2 class="text-xs md:text-sm opacity-90">Administrasi Kependudukan</h2>
+<br>
+        <center class="text-white">
+            <h1 class="text-base md:text-xl font-bold">Informasi Pelayanan</h1>
+            <h2 class="text-xs md:text-lg opacity-90">Administrasi Kependudukan</h2>
         </center>
 
+<div class="p-4">
 
     <div class="bg-white rounded-xl shadow p-4 max-w-md mx-auto">
 

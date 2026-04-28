@@ -1,11 +1,12 @@
 @extends('layout.apps')
 
+@section('title', 'Grafik Tamu')   
 @section('content')
 
 <!-- HEADER -->
 <div class="bg-pink-500 text-white p-4 text-center shadow w-full">
-    <h1 class="text-base md:text-lg font-bold">Grafik Pelayanan</h1>
-    <p class="text-xs md:text-sm opacity-90">Desa Butuh, Boyolali</p>
+    <h1 class="text-base md:text-xl font-bold">Grafik Pelayanan</h1>
+    <p class="text-xs md:text-lg opacity-90">Desa Butuh, Boyolali</p>
 </div>
 
 <div class="p-3 md:p-6">

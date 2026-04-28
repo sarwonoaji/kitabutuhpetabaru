@@ -6,7 +6,7 @@
 <!-- Header -->
 <div style="background-color:#a099ff;" class="text-white py-8 p-4 flex items-center justify-center">
     <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
-    <h1 class="text-lg font-semibold text-center">Peta Aset Desa</h1>
+    <h1 class="text-xl font-semibold text-center">Peta Aset Desa</h1>
 </div>
 
 <!-- Search -->
@@ -70,11 +70,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // POPUP + BUTTON RUTE
             marker.bindPopup(`
-                <div style="font-size:13px;">
-                    <b>${d.nama ?? '-'}</b><br>
-                    Kegunaan: ${d.kegunaan ?? '-'}<br>
-                    Luas: ${d.luas ?? '-'}<br>
-                    No Sertifikat: ${d.no_sertifikat ?? '-'}<br>
+                 <p>
+                    <i class="fas fa-building"></i>
+                    <b>Jenis Aset</b> : ${d.nama}
+                    </p>
+                    <p>
+                    <i class="fas fa-edit"></i>
+                    <b>Kegunaan</b> : ${d.kegunaan}
+                    </p>
+                    <p>
+                    <i class="fas fa-thumbtack"></i>
+                    <b>Luas</b> : ${d.luas}
+                    </p>
+                    <p>
+                    <i class="fas fa-marker"></i>
+                    <b>No. Sertifikat</b> : ${d.no_sertifikat}
+                    </p>
 
                     ${d.foto ? `<img src="/img/aset/${d.foto}" width="200" style="margin-top:5px;border-radius:8px;">` : ''}
 

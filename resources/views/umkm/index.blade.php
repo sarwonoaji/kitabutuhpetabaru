@@ -70,9 +70,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // POPUP + BUTTON RUTE
             marker.bindPopup(`
-                <div style="font-size:13px;">
-                    <b>Nama UMKM: ${d.nama ?? '-'}</b><br>
-                    Deskripsi: ${d.deskripsi ?? '-'}<br>
+                <p>
+                    <i class="fas fa-landmark"></i>
+                    <b>Nama UMKM</b> : ${d.nama}
+                    </p>
+                    <p>
+                    <i class="fas fa-edit"></i>
+                    <b>Deskripsi</b> : ${d.deskripsi}
+                    </p>
+                    <p>
+                    <i class="fas fa-wallet"></i>
+                    <b>Harga</b> : ${d.harga}
+                    </p>
                     ${d.foto ? `<img src="/img/umkm/${d.foto}" width="200" style="margin-top:5px;border-radius:8px;">` : ''}
 
                     <br><br>

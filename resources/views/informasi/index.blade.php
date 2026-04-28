@@ -47,9 +47,9 @@
   </head>
   <body style="background-image: url(/abc2.jpg)">
   <br>
-        <center>
-        <h1 style="font-family: poppins;font-size: 18px;font-weight: bold;margin-top: 10px;">Informasi</h1>
-        <h2 style="font-family: poppins;font-size: 18px;font-weight: bold;margin-top: 10px;">Desa Butuh Boyolali</h2>
+        <center class="text-white">
+        <h1 class="text-base md:text-xl font-bold">Informasi</h1>
+        <h2 class="text-xs md:text-lg font-weight: bold;margin-top: 10px;">Desa Butuh Boyolali</h2>
         </center>
 
     <div class="d-flex align-items-center justify-content-center">

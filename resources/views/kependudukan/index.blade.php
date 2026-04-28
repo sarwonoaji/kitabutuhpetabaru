@@ -1,6 +1,6 @@
 @extends('layout.apps')
 
-@section('title', 'Kependudukan')
+@section('title', 'Kita Butuh Peta')
 
 @push('styles')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
@@ -29,7 +29,9 @@ body {
             @foreach($menuItems as $item)
                 <div class="col-4 d-flex justify-content-center">
                     <div>
-                        <a href="{{ route($item['route']) }}" id="{{ $item['id'] }}" class="d-flex flex-column align-items-center menu-item">
+                        <a href="{{ route('penduduk.show', $item['id']) }}" 
+                                    id="{{ $item['id'] }}" 
+                                    class="d-flex flex-column align-items-center menu-item">
                             <img class="icon-menu" src="{{ asset('icon/' . $item['icon']) }}" alt="{{ $item['name'] }}" loading="lazy" />
                             <p class="text-gray font-10" style="height: 35px; font-size: 12px; text-align: center;">{{ $item['name'] }}</p>
                         </a>

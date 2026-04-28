@@ -6,7 +6,7 @@
 <!-- Header -->
 <div style="background-color:#a099ff;" class="text-white py-8 p-4 flex items-center justify-center">
     <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
-    <h1 class="text-lg font-semibold text-center">Peta Industri</h1>
+    <h1 class="text-xl font-semibold text-center">Peta Industri</h1>
 </div>
 
 <!-- Search -->
@@ -70,10 +70,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // POPUP + BUTTON RUTE
             marker.bindPopup(`
-                <div style="font-size:13px;">
-                    <b>Nama Industri: ${d.nama ?? '-'}</b><br>
-                    Deskripsi: ${d.deskripsi ?? '-'}<br>
-                    Jumlah: ${d.jumlah ?? '-'}<br>
+                <p>
+                    <i class="fas fa-building"></i>
+                    <b>Nama</b> : ${d.nama}
+                    </p>
+                    <p>
+                    <i class="far fa-file-alt"></i>
+                    <b>Deskripsi</b> : ${d.deskripsi}
+                    </p>
+                    <p>
+                    <i class="fas fa-chart-line"></i>
+                    <b>Jumlah Karyawan</b> : ${d.jumlah}
+                    </p>
                     ${d.foto ? `<img src="/img/industri/${d.foto}" width="200" style="margin-top:5px;border-radius:8px;">` : ''}
 
                     <br><br>

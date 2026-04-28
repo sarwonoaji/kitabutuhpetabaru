@@ -32,9 +32,10 @@ use App\Http\Controllers\Admin\Penduduk92Controller;
 use App\Http\Controllers\Admin\BukuTamuController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\KependudukanController;
+use App\Http\Controllers\PendudukMapController;
 use App\Http\Controllers\Admin\MasukanController;
 use App\Http\Controllers\BKTamuController;
-    
+
 
 
 Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
@@ -214,15 +215,22 @@ Route::middleware('auth:admin')->group(function () {
     
 
     //PUBLIC ROUTES
+    Route::get('/kependudukan', [KependudukanController::class, 'index'])
+    ->name('kependudukan.index');
+
+    Route::get('/penduduk/{id}', [PendudukMapController::class, 'show'])
+        ->name('penduduk.show');
+
+
     Route::get('/buku-tamu/create', [BKTamuController::class, 'create'])->name('bKtamu.create');
     Route::post('/buku-tamu/store', [BKTamuController::class, 'store'])->name('bKtamu.store');
     
     Route::get('/masukan/create', [MasukanController::class, 'create'])->name('masukan.create');
     Route::post('/masukan/store', [MasukanController::class, 'store'])->name('masukan.store');
 
-Route::get('/', function () {
-    return view('welcome'); // ganti dari 'welcome' ke 'home'
-});
+    Route::get('/', function () {
+        return view('welcome'); // ganti dari 'welcome' ke 'home'
+    });
 
 // ================= MENU UTAMA =================
 Route::get('/kependudukan', [KependudukanController::class, 'index'])->name('kependudukan');
