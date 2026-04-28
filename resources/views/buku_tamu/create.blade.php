@@ -105,7 +105,7 @@
                     </div>
 
                 <div class="flex flex-col gap-3 sm:flex-row sm:justify-end">
-                    <a href="{{ route('bukutamu.index') }}" class="inline-flex items-center rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50">Kembali</a>
+                    <a href="{{ route('admin.login') }}" class="inline-flex items-center rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50">Kembali</a>
                     <button type="submit" class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-500/10 transition hover:bg-blue-700">Tambah</button>
                 </div>
             </form>

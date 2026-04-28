@@ -9,7 +9,7 @@
         <!-- MENU -->
         <div class="nav-links" id="navLinks">
             <a href="{{ route('admin.dashboard') }}">Dashboard</a>
-            <a href="{{ url('/about') }}">Tentang</a>
+            <a href="{{ route('admin.about') }}">Tentang</a>
             <a href="{{ route('admin.logout') }}">Logout</a>
         </div>
 

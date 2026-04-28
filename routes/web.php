@@ -31,6 +31,7 @@ use App\Http\Controllers\Admin\Penduduk82Controller;
 use App\Http\Controllers\Admin\Penduduk92Controller;
 use App\Http\Controllers\Admin\BukuTamuController;
 use App\Http\Controllers\BKTamuController;
+use App\Http\Controllers\Admin\MasukanController;
 
 
 Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
@@ -190,21 +191,31 @@ Route::middleware('auth:admin')->group(function () {
     Route::match(['put', 'patch'], '/penduduk92/admin/{id}', [Penduduk92Controller::class, 'update'])->name('penduduk92.update');
     Route::delete('/penduduk92/admin/{id}', [Penduduk92Controller::class, 'destroy'])->name('penduduk92.delete');
 
-    });
-
     Route::get('/buku-tamu/admin', [BukuTamuController::class, 'index'])->name('bukutamu.index');
+    Route::get('/buku-tamu/admin/export', [BukuTamuController::class, 'export'])->name('bukutamu.export');
     Route::delete('/buku-tamu/admin/{id}', [BukuTamuController::class, 'destroy'])->name('bukutamu.delete');
     Route::get('/buku-tamu/admin/create', [BukuTamuController::class, 'create'])->name('bukutamu.create');
     Route::post('/buku-tamu/admin/store', [BukuTamuController::class, 'store'])->name('bukutamu.store');
     Route::get('/buku-tamu/admin/{id}/edit', [BukuTamuController::class, 'edit'])->name('bukutamu.edit');
     Route::match(['put', 'patch'], '/buku-tamu/admin/{id}', [BukuTamuController::class, 'update'])->name('bukutamu.update');                
 
+    Route::get('/about/admin', fn() => view('admin.tentang.about_page'))->name('admin.about');
+    
+    Route::get('/masukan/admin', [MasukanController::class, 'index'])->name('masukan.index');
+    Route::delete('/masukan/admin/{id}', [MasukanController::class, 'destroy'])->name('masukan.delete');
+    Route::get('/masukan/admin/{id}/edit', [MasukanController::class, 'edit'])->name('masukan.edit');
+    Route::match(['put', 'patch'], '/masukan/admin/{id}', [MasukanController::class, 'update'])->name('masukan.update');
+
+    });
+
+    
 
     //PUBLIC ROUTES
     Route::get('/buku-tamu/create', [BKTamuController::class, 'create'])->name('bKtamu.create');
     Route::post('/buku-tamu/store', [BKTamuController::class, 'store'])->name('bKtamu.store');
     
-
+    Route::get('/masukan/create', [MasukanController::class, 'create'])->name('masukan.create');
+    Route::post('/masukan/store', [MasukanController::class, 'store'])->name('masukan.store');
 
 Route::get('/', function () {
     return view('welcome'); // ganti dari 'welcome' ke 'home'

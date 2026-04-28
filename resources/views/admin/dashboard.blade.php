@@ -79,7 +79,7 @@
             <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: yellowgreen;">
               <img src="{{ asset('dashboard/5.png') }}" class="card-img-top" alt="...">
               <div class="card-body">
-                <a style="text-align: center; font-family: poppins; font-size: 14px" class="btn btn-light" href="{{ route('grafik') }}">Buku Tamu</a>
+                <a style="text-align: center; font-family: poppins; font-size: 14px" class="btn btn-light" href="{{ route('bukutamu.index') }}">Buku Tamu</a>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@
             <div class="card h-100" style="width: 18rem; padding: 10px 10px 10px 10px; margin-left:10px; margin-right:10px; background-color: brown;">
               <img src="{{ asset('dashboard/pink2.png') }}" class="card-img-top" alt="...">
               <div class="card-body">
-                <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('industri.index') }}" class="btn btn-light">Masukkan</a>
+                <a style="text-align: center; font-family: poppins; font-size: 14px" href="{{ route('masukan.index') }}" class="btn btn-light">Masukkan</a>
               </div>
             </div>
           </div>

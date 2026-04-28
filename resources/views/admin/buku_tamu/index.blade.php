@@ -10,7 +10,9 @@
     <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="rounded-3xl bg-white p-8 shadow-xl ring-1 ring-slate-200">
             <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                <a href="{{ route('bukutamu.create') }}" class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-500/20 transition hover:bg-blue-700">+ Tambah Data</a>
+                <div class="flex gap-2">
+                    <a href="{{ route('bukutamu.export', request()->only('keyword')) }}" class="inline-flex items-center justify-center rounded-2xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow-sm shadow-green-500/20 transition hover:bg-green-700">Export Excel</a>
+                </div>
             </div>
 
             <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -27,6 +29,7 @@
                         <tr>
                             <th class="px-4 py-4 font-medium">Nama</th>
                             <th class="px-4 py-4 font-medium">Jenis Kelamin</th>
+                            <th class="px-4 py-4 font-medium">Tanggal</th>
                             <th class="px-4 py-4 font-medium">Alamat</th>
                             <th class="px-4 py-4 font-medium">Instansi</th>
                             <th class="px-4 py-4 font-medium">Keperluan</th>
@@ -39,6 +42,7 @@
                         <tr class="hover:bg-slate-100">
                             <td class="px-4 py-4 align-top">{{ $row->nama }}</td>
                             <td class="px-4 py-4 align-top">{{ $row->jenis_kelamin }}</td>
+                            <td class="px-4 py-4 align-top">{{ format_tanggal_id($row->tanggal) }}</td>
                             <td class="px-4 py-4 align-top">{{ $row->alamat }}</td>
                             <td class="px-4 py-4 align-top">{{ $row->instansi }}</td>
                             <td class="px-4 py-4 align-top">{{ $row->keperluan }}</td>
