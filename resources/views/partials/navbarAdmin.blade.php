@@ -10,7 +10,11 @@
         <div class="nav-links" id="navLinks">
             <a href="{{ route('admin.dashboard') }}">Dashboard</a>
             <a href="{{ route('admin.about') }}">Tentang</a>
-            <a href="{{ route('admin.logout') }}">Logout</a>
+            <a href="{{ route('useradmin.create') }}">Tambah User</a>
+            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display:none;">
+                @csrf
+            </form>
+            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
         </div>
 
         <!-- BUTTON ☰ -->

@@ -11,11 +11,13 @@ return new class extends Migration
      */
    public function up()
     {
-        Schema::create('user_admin', function (Blueprint $table) {
-            $table->id();
-            $table->string('username')->unique();
-            $table->string('password');
-        });
+        if (!Schema::hasTable('user_admin')) {
+            Schema::create('user_admin', function (Blueprint $table) {
+                $table->id();
+                $table->string('username')->unique();
+                $table->string('password');
+            });
+        }
     }
 
     /**
