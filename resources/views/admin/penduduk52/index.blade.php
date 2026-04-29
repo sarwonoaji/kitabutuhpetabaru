@@ -1,5 +1,6 @@
 @extends('layout.admin')
 
+@section('title', 'RT 5 / RW 2')
 @section('content')
 <div class="h-10">
     <h4 class="text-2xl text-slate-900 text-center">
@@ -98,10 +99,6 @@ penduduk52.forEach(d => {
         <p>
         <i class="fas fa-home"></i>
         <b>Keterangan</b> : ${d.keterangan}
-        </p>
-        <p>
-        <i class="fas fa-home"></i>
-        <b>jumlah anggota kepala keluarga</b> : ${d.jumlahanggota}
         </p>
         <p>
         ${d.foto ? `<img src="/img/penduduk52/${d.foto}" width="300" style="margin-top:5px;border-radius:8px;">` : ''}

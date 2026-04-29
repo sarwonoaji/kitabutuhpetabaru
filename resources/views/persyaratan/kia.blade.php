@@ -1,6 +1,6 @@
 @extends('layout.apps')
 
-@section('title', 'Persyaratan Penerbitan KIA')
+@section('title', 'KIA')
 @section('content')
 
 <style>

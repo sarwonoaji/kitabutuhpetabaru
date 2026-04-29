@@ -6,7 +6,7 @@
 
 
 
-<div style="background-color:#a099ff;" class="text-white py-8 p-4 flex items-center justify-center">
+<div style="background-color:#a099ff;" class="text-black py-8 p-4 flex items-center justify-center">
     <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
     <h1 class="text-xl font-semibold text-center">Peta Penduduk {{ $label }}</h1>
 </div>
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <b>Keterangan</b> : ${d.keterangan}
                     </p>
 
-                    ${d.foto ? `<img src="/img/${d.foto}" width="200" style="margin-top:5px;border-radius:8px;">` : ''}
+                    ${d.foto ? `<img src="/img/{{ $id }}/${d.foto}" width="200" style="margin-top:5px;border-radius:8px;">` : ''}
 
                     <br><br>
 

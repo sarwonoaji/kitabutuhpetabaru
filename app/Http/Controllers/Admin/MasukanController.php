@@ -50,7 +50,7 @@ class MasukanController extends Controller
 
         Masukan::create($data);
 
-        return redirect()->route('masukan.create')
+        return redirect()->route('welcome')
             ->with('success', 'Data berhasil ditambahkan!');
     }
 

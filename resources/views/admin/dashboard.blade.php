@@ -1,5 +1,6 @@
 @extends('layout.admin')
 
+@section('title', 'Dashboard')
 @section('content')
 
 
@@ -48,7 +49,7 @@
  
     <div class="container-fluid"></div>
 
-    <h2 style="text-align:center; padding-top:20px; font-family: verdana; font-size:2rem; background-color:#ffffff; padding:16px;">Halaman Dashboard</h2>
+    <h2 style="text-align:center; padding-top:10px; font-family: verdana; font-size:1.5rem; background-color:#ffffff; padding:10px;">Halaman Dashboard</h2>
     <hr>
     <div class=" row-cols-1 row-cols-md-3 g-4" style="display: grid; grid-template-columns: repeat(4,1fr);">
         <div class="col">

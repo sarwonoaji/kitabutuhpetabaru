@@ -75,6 +75,14 @@ Route::middleware('auth:admin')->group(function () {
     Route::match(['put', 'patch'], '/umkm/admin/{id}', [UMKMAdminController::class, 'update'])->name('umkm.update');
     Route::delete('/umkm/admin/{id}', [UMKMAdminController::class, 'destroy'])->name('umkm.delete');
 
+    //Ternak
+    Route::get('/ternak-tani/admin', [TernakTaniController::class, 'index'])->name('ternaktani.index');
+    Route::get('/ternak-tani/admin/create', [TernakTaniController::class, 'create'])->name('ternaktani.create');
+    Route::post('/ternak-tani/admin/store', [TernakTaniController::class, 'store'])->name('ternaktani.store');
+    Route::get('/ternak-tani/admin/{id}/edit', [TernakTaniController::class, 'edit'])->name('ternaktani.edit');
+    Route::match(['put', 'patch'], '/ternak-tani/admin/{id}', [TernakTaniController::class, 'update'])->name('ternaktani.update');
+    Route::delete('/ternak-tani/admin/{id}', [TernakTaniController::class, 'destroy'])->name('ternaktani.delete');      
+
     // Industri
     Route::get('/industri/admin', [IndustriAdminController::class, 'index'])->name('industri.index');
     Route::get('/industri/admin/create', [IndustriAdminController::class, 'create'])->name('industri.create');
@@ -227,9 +235,8 @@ Route::middleware('auth:admin')->group(function () {
 // -----------------------------
 // Public routes
 // -----------------------------
-Route::get('/', function () {
-    return view('welcome'); // ganti dari 'welcome' ke 'home' jika perlu
-});
+Route::get('/', fn() => view('welcome'))->name('welcome');
+
 
 // Menu utama / fitur
 Route::get('/kependudukan', [KependudukanController::class, 'index'])->name('kependudukan');

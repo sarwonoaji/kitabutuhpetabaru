@@ -1,5 +1,5 @@
 @extends('layout.apps')
-@section('title', 'Pencatatan Perubahan Nama')
+@section('title', 'Perubahan Nama')
 @section('content')
 
 <style>

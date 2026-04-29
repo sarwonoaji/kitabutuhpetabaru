@@ -1,5 +1,6 @@
 @extends('layout.admin')
 
+@section('title', 'Ubah Data Penduduk RT 9 / RW 2')
 @section('content')
 <div class="h-10">
     <h4 class="text-2xl text-slate-900 text-center">

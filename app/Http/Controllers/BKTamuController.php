@@ -27,7 +27,7 @@ class BKTamuController extends Controller
 
         BukuTamu::create($data);
 
-        return redirect()->route('bukutamu.index')
+        return redirect()->route('bKtamu.create')
             ->with('success', 'Data berhasil ditambahkan!');
     }
 

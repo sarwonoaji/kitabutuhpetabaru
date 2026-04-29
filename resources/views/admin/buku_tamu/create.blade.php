@@ -1,10 +1,10 @@
 @extends('layout.admin')
 
+@section('title', 'Tambah Data Pada Buku Tamu')
 @section('content')
-<div class="h-10">
-    <h4 class="text-2xl text-slate-900 text-center">
-        Tambah Data Pada Buku Tamu
-    </h4>
+<div style="background-color:#a099ff;" class="text-black py-8 p-4 flex items-center justify-center">
+    <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
+    <h1 class="text-2xl font-semibold text-center">Tambah Data Pada Buku Tamu</h1>
 </div>
 <div class="min-h-screen bg-slate-100 py-10">
     <div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">

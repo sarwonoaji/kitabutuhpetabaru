@@ -1,6 +1,6 @@
 @extends('layout.apps')
 
-@section('title', 'Pencatatan Perkawinan')
+@section('title', 'Perkawinan')
 @section('content')
 
 <style>

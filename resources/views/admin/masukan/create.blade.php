@@ -1,8 +1,9 @@
 @extends('layout.apps')
 
+@section('title', 'Masukan')
 @section('content')
 <!-- Header -->
-<div style="background-color:#a099ff;" class="text-white py-8 p-4 flex items-center justify-center">
+<div style="background-color:#a099ff;" class="text-black py-8 p-4 flex items-center justify-center">
     <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
     <h1 class="text-2xl font-semibold text-center">Masukan</h1>
 </div>

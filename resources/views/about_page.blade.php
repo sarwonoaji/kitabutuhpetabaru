@@ -1,10 +1,11 @@
 @extends('layout.apps')
 
+@section('title', 'Tentang')
 @section('content')
 
-<div style="background-color:#a099ff;" class="text-white py-8 p-4 flex items-center justify-center">
+<div style="background-color:#a099ff;" class="text-black py-8 p-4 flex items-center justify-center">
     <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
-    <h1 class="text-lg font-semibold text-center">Tentang</h1>
+    <h1 class="text-xl font-semibold text-center">Tentang</h1>
 </div>
 
 <div class="container py-4">

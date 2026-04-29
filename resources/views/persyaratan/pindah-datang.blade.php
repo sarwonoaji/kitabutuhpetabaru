@@ -1,6 +1,6 @@
 @extends('layout.apps')
 
-@section('title', 'Pencatatan Pindah Datang')
+@section('title', 'Pindah Datang')
 @section('content')
 
 <style>
@@ -10,7 +10,7 @@ body {
 </style>
 <!-- HEADER -->
 <div class="text-black p-4 text-center">
-    <h1 class="text-xl font-bold">Persyaratan Pencatatan</h1>
+    <h1 class="text-xl font-bold">Persyaratan Penerbitan</h1>
     <h2 class="text-lg">Pindah Datang</h2>
 </div>
 

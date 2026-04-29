@@ -1,6 +1,6 @@
 @extends('layout.apps')
 
-@section('title', 'Pencatatan Pengangkatan Anak')
+@section('title', 'Pengangkatan Anak')
 @section('content')
 
 <style>
@@ -10,8 +10,8 @@ body {
 </style>    
 <!-- HEADER -->
 <div class="text-black p-4 text-center">
-    <h1 class="text-xl font-bold">Pencatatan</h1>
-    <h2 class="text-lg">Pengangkatan Anak</h2>
+    <h1 class="text-xl font-bold">Pencatatan Pengangkatan</h1>
+    <h2 class="text-lg">Anak</h2>
 </div>
 
 <!-- CONTENT -->

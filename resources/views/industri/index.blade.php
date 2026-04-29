@@ -4,7 +4,7 @@
 @section('content')
 
 <!-- Header -->
-<div style="background-color:#a099ff;" class="text-white py-8 p-4 flex items-center justify-center">
+<div style="background-color:#a099ff;" class="text-black py-8 p-4 flex items-center justify-center">
     <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
     <h1 class="text-xl font-semibold text-center">Peta Industri</h1>
 </div>

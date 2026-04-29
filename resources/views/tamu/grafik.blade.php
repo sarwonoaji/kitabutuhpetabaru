@@ -4,7 +4,7 @@
 @section('content')
 
 <!-- HEADER -->
-<div class="bg-pink-500 text-white p-4 text-center shadow w-full">
+<div class="bg-pink-500 text-black p-4 text-center shadow w-full">
     <h1 class="text-base md:text-xl font-bold">Grafik Pelayanan</h1>
     <p class="text-xs md:text-lg opacity-90">Desa Butuh, Boyolali</p>
 </div>

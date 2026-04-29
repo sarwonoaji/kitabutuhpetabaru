@@ -1,5 +1,6 @@
 @extends('layout.admin')
 
+@section('title', 'Peta Industri')
 @section('content')
 <div class="h-10">
     <h4 class="text-2xl text-slate-900 text-center">

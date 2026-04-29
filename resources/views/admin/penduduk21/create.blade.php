@@ -1,5 +1,6 @@
 @extends('layout.admin')
 
+@section('title', 'Tambah Data Penduduk RT 2 / RW 1')
 @section('content')
 <div class="h-10">
     <h4 class="text-2xl text-slate-900 text-center">
@@ -34,10 +35,6 @@
                     <div>
                         <label class="mb-2 block text-sm font-medium text-slate-700">Keterangan</label>
                         <input type="text" name="keterangan" value="{{ old('keterangan') }}" class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100" required>
-                    </div>
-                    <div>
-                        <label class="mb-2 block text-sm font-medium text-slate-700">Jumlah Anggota Keluarga</label>
-                        <input type="text" name="jumlahanggota" value="{{ old('jumlahanggota') }}" class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100" required>
                     </div>
                     <div>
                         <label class="mb-2 block text-sm font-medium text-slate-700">Foto (Maksimal 1 MB)</label>

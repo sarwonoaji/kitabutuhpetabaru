@@ -1,6 +1,6 @@
 @extends('layout.apps')
 
-@section('title', 'Pencatatan Akta Pengakuan Anak')
+@section('title', 'Akta Pengakuan Anak')
 @section('content')
 
 <style>

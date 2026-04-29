@@ -1,10 +1,12 @@
 @extends('layout.admin')
 
+@section('title', 'Tambah User')
 @section('content')
 <!-- Header -->
-<div style="background-color:#a099ff;" class="text-white py-8 p-4 flex items-center justify-center">
-    <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
-    <h1 class="text-2xl font-semibold text-center">Tambah User</h1>
+<div class="h-10">
+    <h4 class="text-xl text-slate-900 text-center">
+        Tambah User
+    </h4>
 </div>
 <div class="min-h-screen bg-slate-100 py-10">
     <div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">

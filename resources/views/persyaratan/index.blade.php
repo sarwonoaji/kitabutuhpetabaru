@@ -11,7 +11,7 @@ body {
 
 
 <br>
-        <center class="text-white">
+        <center class="text-black">
             <h1 class="text-base md:text-xl font-bold">Informasi Pelayanan</h1>
             <h2 class="text-xs md:text-lg opacity-90">Administrasi Kependudukan</h2>
         </center>
@@ -32,23 +32,23 @@ body {
 
             <a href="{{ route('persyaratan.kia') }}" class="bg-yellow-500 text-black text-center py-2 rounded-lg">Persyaratan Penerbitan KIA</a>
 
-            <a href="{{ route('persyaratan.kts') }}" class="bg-cyan-500 text-white text-center py-2 rounded-lg">Kartu Tinggal Sementara</a>
+            <a href="{{ route('persyaratan.kts') }}" class="bg-cyan-500 text-white text-center py-2 rounded-lg">Persyaratan Kartu Tinggal Sementara</a>
 
-            <a href="{{ route('persyaratan.akta-kelahiran') }}" class="bg-green-600 text-white text-center py-2 rounded-lg">Akta Kelahiran</a>
+            <a href="{{ route('persyaratan.akta-kelahiran') }}" class="bg-green-600 text-white text-center py-2 rounded-lg">Pembuatan Akta Kelahiran</a>
 
-            <a href="{{ route('persyaratan.pencatatan-perkawinan') }}" class="bg-blue-500 text-white text-center py-2 rounded-lg">Pencatatan Perkawinan</a>
+            <a href="{{ route('persyaratan.pencatatan-perkawinan') }}" class="bg-blue-500 text-white text-center py-2 rounded-lg">Persyaratan Pencatatan Perkawinan</a>
 
-            <a href="{{ route('persyaratan.akta-kematian') }}" class="bg-gray-500 text-white text-center py-2 rounded-lg">Akta Kematian</a>
+            <a href="{{ route('persyaratan.akta-kematian') }}" class="bg-gray-500 text-white text-center py-2 rounded-lg">Pencatatan Akta Kematian</a>
 
-            <a href="{{ route('persyaratan.perceraian') }}" class="bg-green-700 text-white text-center py-2 rounded-lg">Perceraian</a>
+            <a href="{{ route('persyaratan.perceraian') }}" class="bg-green-700 text-white text-center py-2 rounded-lg">Persyaratan Pencatatan Perceraian</a>
 
-            <a href="{{ route('persyaratan.perubahan-nama') }}" class="bg-red-600 text-white text-center py-2 rounded-lg">Perubahan Nama</a>
+            <a href="{{ route('persyaratan.perubahan-nama') }}" class="bg-red-600 text-white text-center py-2 rounded-lg">Pencatatan Perubahan Nama</a>
 
-            <a href="{{ route('persyaratan.pengakuan-anak') }}" class="bg-yellow-400 text-black text-center py-2 rounded-lg">Pengakuan Anak</a>
+            <a href="{{ route('persyaratan.pengakuan-anak') }}" class="bg-yellow-400 text-black text-center py-2 rounded-lg">Pencatatan Akta Pengakuan Anak</a>
 
-            <a href="{{ route('persyaratan.pengesahan-anak') }}" class="bg-cyan-600 text-white text-center py-2 rounded-lg">Pengesahan Anak</a>
+            <a href="{{ route('persyaratan.pengesahan-anak') }}" class="bg-cyan-600 text-white text-center py-2 rounded-lg">Pencatatan Pengesahan Anak</a>
 
-            <a href="{{ route('persyaratan.pengangkatan-anak') }}" class="bg-yellow-500 text-black text-center py-2 rounded-lg">Pengangkatan Anak</a>
+            <a href="{{ route('persyaratan.pengangkatan-anak') }}" class="bg-yellow-500 text-black text-center py-2 rounded-lg">Pencatatan Pengangkatan Anak</a>
 
         </div>
 

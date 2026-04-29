@@ -47,7 +47,7 @@
   </head>
   <body style="background-image: url(/abc2.jpg)">
   <br>
-        <center class="text-white">
+        <center class="text-black">
         <h1 class="text-base md:text-xl font-bold">Informasi</h1>
         <h2 class="text-xs md:text-lg font-weight: bold;margin-top: 10px;">Desa Butuh Boyolali</h2>
         </center>

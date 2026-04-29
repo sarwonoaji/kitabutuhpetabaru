@@ -1,6 +1,6 @@
 @extends('layout.apps')
 
-@section('title', 'Pencatatan Perceraian')
+@section('title', 'Perceraian')
 @section('content')
 
 <style>

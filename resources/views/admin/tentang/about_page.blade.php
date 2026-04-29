@@ -1,9 +1,10 @@
 @extends('layout.admin')
 
+@section('title', 'Tentang')
 @section('content')
 
 <div class="h-10">
-    <h4 class="text-2xl text-slate-900 text-center">
+    <h4 class="text-xl text-slate-900 text-center">
         Tentang Kita Butuh Peta
     </h4>
 </div>
@@ -65,14 +66,15 @@
       
     </div>
       
-</div>
-
-<br>
+    <br>
         <footer style="background-color: #a099ff; padding-bottom: 10px; display:block">
       <div class="align-items-center">
         <p></p>
         <p style="font-family: fangsong; text-align: center; padding-top: 30px; font-size: 17px">Kita Butuh Peta</p>
       </div>
     </footer>
+</div>
+
+
 
 @endsection
