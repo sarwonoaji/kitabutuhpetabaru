@@ -77,6 +77,7 @@
                 ['title'=>'Administrasi','image'=>asset('icon/layanan-admin.png'),'url'=>'https://pemdesbutuh.id/layanan/login'],
                 ['title'=>'Persyaratan','image'=>asset('icon/persyaratan.png'),'route'=>'persyaratan'],
                 ['title'=>'Masukan','image'=>asset('icon/masukan.png'),'route'=>'masukan.create'],
+                ['title'=>'Buku Tamu','image'=>asset('icon/buku-tamu.png'),'route'=>'bKtamu.create'],
             ];
             @endphp
 

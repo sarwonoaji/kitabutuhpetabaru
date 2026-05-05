@@ -73,7 +73,6 @@
                 <div>{{ $bukutamu->links() }}</div>
             </div>
 
-            <div id="map" class="mt-8 h-[400px] rounded-3xl border border-slate-200"></div>
         </div>
     </div>
 </div>

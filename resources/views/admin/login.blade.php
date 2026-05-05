@@ -135,9 +135,6 @@
             <!-- Button -->
             <button type="submit" class="btn-login">Login</button>
 
-            <!-- Buku Tamu -->
-            <a  href="{{ route('bKtamu.create') }}">BUKU TAMU</a>
-
         </form>
     </div>
 </div>

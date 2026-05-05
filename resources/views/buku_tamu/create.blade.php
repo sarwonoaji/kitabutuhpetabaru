@@ -1,17 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>@yield('title', 'Buku Tamu Desa')</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
-<body>
+@extends('layout.apps')
 
-<main class="w-full">
+@section('title', 'Tambah Data Pada Buku Tamu')
+@section('content')
 <div style="background-color:#a099ff;" class="text-black py-8 p-4 flex items-center justify-center">
     <a href="{{ url('/') }}" class="mr-3 text-xl"></a>
     <h1 class="text-2xl font-semibold text-center">Tambah Data Pada Buku Tamu</h1>
@@ -104,15 +94,11 @@
                     </div>
 
                 <div class="flex flex-col gap-3 sm:flex-row sm:justify-end">
-                    <a href="{{ route('admin.login') }}" class="inline-flex items-center rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50">Kembali</a>
+                    <a href="/" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50">Kembali</a>
                     <button type="submit" class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-500/10 transition hover:bg-blue-700">Tambah</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-</main>
-  
-    @stack('scripts')
-</body>
-</html>
+@endsection

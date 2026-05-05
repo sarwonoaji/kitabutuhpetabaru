@@ -1,7 +1,6 @@
 @extends('layout.apps')
 @section('title', 'Kartu Keluarga')
 @section('content')
-s
 <style>
 body {
     background-image: url(/abc2.jpg);
